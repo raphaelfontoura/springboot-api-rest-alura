@@ -1,6 +1,8 @@
 package br.com.alura.forum.controller.dto;
 
 
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
 public class LoginForm {
     private String email;
     private String senha;
@@ -15,5 +17,9 @@ public class LoginForm {
 
     public String getEmail() {
         return email;
+    }
+
+    public UsernamePasswordAuthenticationToken converter() {
+        return new UsernamePasswordAuthenticationToken(email, senha);
     }
 }

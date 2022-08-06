@@ -19,6 +19,16 @@ import static org.junit.jupiter.api.Assertions.*;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles("test")
+
+/*
+A partir da versão 2.5.1 do Spring Boot a propriedade spring.datasource.initialization-mode foi removida
+e deve-se utilizar a nova propriedade spring.sql.init.mode em seu lugar.
+
+Essa nova propriedade aceita dois possíveis valores:
+
+always -> sempre inicializa o banco de dados
+never -> nunca inicializa o banco de dados
+ */
 class TopicoRepositoryTest {
 
     @Autowired

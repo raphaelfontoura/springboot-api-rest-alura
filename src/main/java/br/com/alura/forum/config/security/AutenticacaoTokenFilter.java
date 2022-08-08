@@ -31,7 +31,6 @@ public class AutenticacaoTokenFilter extends OncePerRequestFilter {
         if (tokenService.isTokenValid(token)) {
             autenticarCliente(token);
         }
-
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 
